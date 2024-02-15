@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <rating_table_file>
   <DocumentHeader>
-    <VPMN>{Company code FROM ROW}</VPMN>
+    <VPMN>{{ company_code }}</VPMN>
     <HPMN>{HPMN}</HPMN>
-    <Sender>{Company code FROM ROW}</Sender>
+    <Sender>{{ company_code }}</Sender>
     <Recipient>{HPMN}</Recipient>
     <FileType>IOT</FileType>
     <EffectiveDate>{EffectiveDate}</EffectiveDate>
@@ -16,8 +16,8 @@
     <TypeOfChange>
       <Standard>First</Standard>
     </TypeOfChange>
-    <PublishComment>This is a RAEX IOT 5.0 document for {Company code FROM ROW}</PublishComment>
-    <InternalReferenceId>{Company code FROM ROW}</InternalReferenceId>
+    <PublishComment>This is a RAEX IOT 5.0 document for {{ company_code }}</PublishComment>
+    <InternalReferenceId>{{ company_code }}</InternalReferenceId>
     <IotSchemaVersion>5.0</IotSchemaVersion>
     <TADIGGenSchemaVersion>2.4</TADIGGenSchemaVersion>
   </DocumentHeader>
@@ -89,8 +89,8 @@
       <tadig-raex-iot:DestinationBandName>National</tadig-raex-iot:DestinationBandName>
       <tadig-raex-iot:DestinationList>
         <tadig-raex-iot:Destination>
-          <Name>{Country}</Name>
-          <CountryCode>{Company number}</CountryCode>
+          <Name>{{ country }}</Name>
+          <CountryCode>{{ company_number }}</CountryCode>
         </tadig-raex-iot:Destination>
       </tadig-raex-iot:DestinationList>
     </DestBand>
@@ -165,7 +165,7 @@
                                   <tadig-raex-iot:RateSpecList>
                                     <RateSpec chargeType="00">
                                       <tadig-raex-iot:RatingIntervalName>Per minute</tadig-raex-iot:RatingIntervalName>
-                                      <tadig-raex-iot:Rate type="I">{Local call cost per min}</tadig-raex-iot:Rate>
+                                      <tadig-raex-iot:Rate type="I">{{ local_call_cost_per_min }}</tadig-raex-iot:Rate>
                                     </RateSpec>
                                   </tadig-raex-iot:RateSpecList>
                                 </DurationChargedItem>
@@ -193,7 +193,7 @@
                                   <tadig-raex-iot:RateSpecList>
                                     <RateSpec chargeType="00">
                                       <tadig-raex-iot:RatingIntervalName>Per minute</tadig-raex-iot:RatingIntervalName>
-                                      <tadig-raex-iot:Rate type="I">{Calling to ME cost per min}</tadig-raex-iot:Rate>
+                                      <tadig-raex-iot:Rate type="I">{{ calling_to_me_cost_per_min }}</tadig-raex-iot:Rate>
                                     </RateSpec>
                                   </tadig-raex-iot:RateSpecList>
                                 </DurationChargedItem>
@@ -221,7 +221,7 @@
                                   <tadig-raex-iot:RateSpecList>
                                     <RateSpec chargeType="00">
                                       <tadig-raex-iot:RatingIntervalName>Per minute</tadig-raex-iot:RatingIntervalName>
-                                      <tadig-raex-iot:Rate type="I">{Calling to other destinations cost per min}</tadig-raex-iot:Rate>
+                                      <tadig-raex-iot:Rate type="I">{{ calling_to_other_destinations_cost_per_min }}</tadig-raex-iot:Rate>
                                     </RateSpec>
                                   </tadig-raex-iot:RateSpecList>
                                 </DurationChargedItem>
@@ -268,7 +268,7 @@
                           <tadig-raex-iot:MTRateSpecList>
                             <RateSpec chargeType="00">
                               <tadig-raex-iot:RatingIntervalName>Per minute</tadig-raex-iot:RatingIntervalName>
-                              <tadig-raex-iot:Rate type="I">{Receiving call cost per min}</tadig-raex-iot:Rate>
+                              <tadig-raex-iot:Rate type="I">{{ receiving_call_cost_per_min }}</tadig-raex-iot:Rate>
                             </RateSpec>
                           </tadig-raex-iot:MTRateSpecList>
                         </DurationChargedItem>
@@ -295,7 +295,7 @@
                 <CTLSet ctl1="1" ctl2="0" ctl3="2">
                   <AppTBFix>
                     <tadig-raex-iot:TimeBandName>Any</tadig-raex-iot:TimeBandName>
-                    <FixCharge>{SMS  MO cost per sms}</FixCharge>
+                    <FixCharge>{{ sms_mo_cost_per_sms }}</FixCharge>
                   </AppTBFix>
                 </CTLSet>
               </CTLSetList>
@@ -334,7 +334,7 @@
                           <Total degressive="false">
                             <RateSpec>
                               <tadig-raex-iot:RatingIntervalName>Per 1 megabyte</tadig-raex-iot:RatingIntervalName>
-                              <tadig-raex-iot:Rate type="I">{Data cost per MB}</tadig-raex-iot:Rate>
+                              <tadig-raex-iot:Rate type="I">{{ data_cost_per_mb }}</tadig-raex-iot:Rate>
                             </RateSpec>
                           </Total>
                         </ChargedItem>
