@@ -2,14 +2,14 @@
 <rating_table_file>
   <DocumentHeader>
     <VPMN>{{ company_code }}</VPMN>
-    <HPMN>{HPMN}</HPMN>
+    <HPMN>{{ hpmn }}</HPMN>
     <Sender>{{ company_code }}</Sender>
-    <Recipient>{HPMN}</Recipient>
+    <Recipient>{{ hpmn }}</Recipient>
     <FileType>IOT</FileType>
-    <EffectiveDate>{EffectiveDate}</EffectiveDate>
-    <SubmissionDT>{SubmissionDT}</SubmissionDT>
-    <IOTIdentifier>{IOTIdentifier}</IOTIdentifier>
-    <CorrectionSequence>{CorrectionSequence}</CorrectionSequence>
+    <EffectiveDate>{{ effective_date }}</EffectiveDate>
+    <SubmissionDT>{{ submission_dt }}</SubmissionDT>
+    <IOTIdentifier>{{ iot_identifier }}</IOTIdentifier>
+    <CorrectionSequence>{{ correction_sequence }}</CorrectionSequence>
     <TypeOfIOT>
       <StandardIOT/>
     </TypeOfIOT>
@@ -22,7 +22,7 @@
     <TADIGGenSchemaVersion>2.4</TADIGGenSchemaVersion>
   </DocumentHeader>
   <CurrencyInfo>
-    <IOTCurrency>{IOTCurrency}</IOTCurrency>
+    <IOTCurrency>{{ iot_currency }}</IOTCurrency>
   </CurrencyInfo>
   <TaxDefinition>
     <TaxNotApplicable/>
